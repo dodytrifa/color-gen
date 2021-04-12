@@ -14,6 +14,7 @@ const SingleColor = ({rgb, index, weight, hex}) => {
       <p className='color-value'>{hex}</p>
     </article>
     asdasdfasdfasdfd
+    asgasdgasdgasdgasdgasdgadsg
   )
 }
 
