@@ -6,7 +6,7 @@ import Values from 'values.js'
 function App() {
   const [color, setColor] = useState('')
   const [error, setError] = useState(false)
-  const [list,setList] = useState([])
+  const [list,setList] = useState(new Values('#f45362').all(10))
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -32,7 +32,7 @@ function App() {
         placeholder="#00000"
         className={`${error ? 'error' : null}`}
         ></input>
-        <button className='btn' type='submit'>Submit</button>
+        <button className='btn' type='submit'>Submit</button >
       </form>
     </section>
     <section
@@ -40,14 +40,16 @@ function App() {
     >
       {
         list.map((color, index) => {
+          // const hex = color.hex
           return (
             <SingleColor 
             key={index} 
             {...color} 
-            index={index}/>
+            index={index}
+            hexColor={color.hex}/>
           )
-        })}
-      <h2>color generator project</h2>
+        })
+      }
     </section>
     </>
     ) 
